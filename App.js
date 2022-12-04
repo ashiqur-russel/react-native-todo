@@ -19,6 +19,10 @@ export default function App() {
     setTodoContent("");
   };
 
+  const handleDeleteTodo = (id) => {
+    const fitterdTodo = todos.filter((todo) => todo.id !== id);
+    setTodos(fitterdTodo);
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Daily Todo</Text>
@@ -32,7 +36,12 @@ export default function App() {
       <View style={styles.mainApp}>
         <View style={styles.todos}>
           {todos.map((todo, index) => (
-            <Todo key={index} id={todo?.id} text={todo?.text} />
+            <Todo
+              key={index}
+              id={todo?.id}
+              text={todo?.text}
+              handleDeleteTodo={handleDeleteTodo}
+            />
           ))}
         </View>
       </View>

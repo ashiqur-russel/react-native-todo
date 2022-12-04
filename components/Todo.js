@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-export default function Todo({ text, id }) {
+export default function Todo({ text, id, handleDeleteTodo }) {
   return (
     <View style={styles.todo}>
       <View style={styles.todoNumber}>
@@ -10,7 +10,7 @@ export default function Todo({ text, id }) {
         </View>
         <Text style={styles.todoText}>{text}</Text>
       </View>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={() => handleDeleteTodo(id)}>
         <Text style={styles.btnText}>Remove</Text>
       </TouchableOpacity>
     </View>
