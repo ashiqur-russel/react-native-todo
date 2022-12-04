@@ -1,10 +1,60 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
 export default function Todo() {
   return (
-    <View>
-      <Text>Todo</Text>
+    <View style={styles.todo}>
+      <View style={styles.todoNumber}>
+        <View style={styles.order}>
+          <Text style={styles.indexColor}>#1</Text>
+        </View>
+        <Text style={styles.todoText}>Task One</Text>
+      </View>
+
+      <TouchableOpacity style={styles.btn}>
+        {" "}
+        <Text style={styles.btnText}>Remove</Text>
+      </TouchableOpacity>
     </View>
   );
 }
+const styles = StyleSheet.create({
+  todo: {
+    marginBottom: 15,
+    padding: 15,
+    backgroundColor: "#f7f7f7",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  todoNumber: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
+  order: {
+    width: 25,
+    height: 25,
+    backgroundColor: "#e66767",
+    borderColor: "gray",
+    borderRadius: "5",
+    opacity: 0.5,
+    marginRight: 10,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  indexColor: {
+    color: "white",
+  },
+  btn: {
+    backgroundColor: "#e66767",
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    borderRadius: 5,
+  },
+  btnText: {
+    color: "white",
+  },
+});
