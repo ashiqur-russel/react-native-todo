@@ -1,10 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Todo from "./components/Todo";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <View style={styles.mainApp}>
+        <Text style={styles.heading}>Daily Todo</Text>
+        <View style={styles.todos}>
+          <Todo />
+          <Todo />
+          <Todo />
+        </View>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +21,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
   },
+  mainApp: {
+    paddingTop: 40,
+    paddingHorizontal: 20,
+  },
+  heading: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  todos: {},
 });
