@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "todo",
+    "name": "My Daily Todo",
     "slug": "todo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,16 +18,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.claw1990.todo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.claw1990.todo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6c09da8b-833e-4407-8c4f-481445a53838"
+      }
     }
   }
 }
