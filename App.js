@@ -35,14 +35,18 @@ export default function App() {
 
       <View style={styles.mainApp}>
         <View style={styles.todos}>
-          {todos.map((todo, index) => (
-            <Todo
-              key={index}
-              id={todo?.id}
-              text={todo?.text}
-              handleDeleteTodo={handleDeleteTodo}
-            />
-          ))}
+          {todos.length > 0 ? (
+            todos.map((todo, index) => (
+              <Todo
+                key={index}
+                id={todo?.id}
+                text={todo?.text}
+                handleDeleteTodo={handleDeleteTodo}
+              />
+            ))
+          ) : (
+            <Text style={styles.emptyList}>Empty Todo list</Text>
+          )}
         </View>
       </View>
 
@@ -71,4 +75,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   todos: {},
+  emptyList: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: 50,
+  },
 });
