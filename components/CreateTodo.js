@@ -9,14 +9,20 @@ import {
 } from "react-native";
 import React from "react";
 
-export default function CreateTodo() {
+export default function CreateTodo(props) {
+  const { todoContent, setTodoContent } = props;
   return (
     <View>
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.createTodoBox}
       >
-        <TextInput style={styles.input} placeholder="Write here..."></TextInput>
+        <TextInput
+          style={styles.input}
+          placeholder="Write here..."
+          value={todoContent}
+          onChangeText={(text) => setTodoContent(text)}
+        ></TextInput>
         <TouchableOpacity>
           <View style={styles.btn}>
             <Text style={styles.addBtn}>ADD</Text>

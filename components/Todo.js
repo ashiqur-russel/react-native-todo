@@ -6,13 +6,11 @@ export default function Todo() {
     <View style={styles.todo}>
       <View style={styles.todoNumber}>
         <View style={styles.order}>
-          <Text style={styles.indexColor}>#1</Text>
+          <Text style={styles.textColor}>1</Text>
         </View>
-        <Text style={styles.todoText}>Task One</Text>
+        <Text style={styles.todoText}>Task list</Text>
       </View>
-
       <TouchableOpacity style={styles.btn}>
-        {" "}
         <Text style={styles.btnText}>Remove</Text>
       </TouchableOpacity>
     </View>
