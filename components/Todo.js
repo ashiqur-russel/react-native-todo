@@ -1,14 +1,14 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 
-export default function Todo() {
+export default function Todo({ text, id }) {
   return (
     <View style={styles.todo}>
       <View style={styles.todoNumber}>
         <View style={styles.order}>
-          <Text style={styles.textColor}>1</Text>
+          <Text style={styles.textColor}>{id}</Text>
         </View>
-        <Text style={styles.todoText}>Task list</Text>
+        <Text style={styles.todoText}>{text}</Text>
       </View>
       <TouchableOpacity style={styles.btn}>
         <Text style={styles.btnText}>Remove</Text>

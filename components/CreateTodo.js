@@ -10,7 +10,7 @@ import {
 import React from "react";
 
 export default function CreateTodo(props) {
-  const { todoContent, setTodoContent } = props;
+  const { todoContent, setTodoContent, handleAddTodo } = props;
   return (
     <View>
       <KeyboardAvoidingView
@@ -23,7 +23,7 @@ export default function CreateTodo(props) {
           value={todoContent}
           onChangeText={(text) => setTodoContent(text)}
         ></TextInput>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleAddTodo}>
           <View style={styles.btn}>
             <Text style={styles.addBtn}>ADD</Text>
           </View>

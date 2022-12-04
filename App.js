@@ -1,22 +1,39 @@
 import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Keyboard, StyleSheet, Text, View } from "react-native";
 import CreateTodo from "./components/CreateTodo";
 import Todo from "./components/Todo";
 
 export default function App() {
+  const [todos, setTodos] = useState([]);
   const [todoContent, setTodoContent] = useState("");
+  console.log(todoContent);
+  console.log(todos);
+  const handleAddTodo = () => {
+    if (!todoContent) return;
+
+    Keyboard.dismiss();
+
+    console.log("clicked");
+    setTodos((prev) => [...prev, { id: prev.length + 1, text: todoContent }]);
+    setTodoContent("");
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Daily Todo</Text>
 
-      <CreateTodo todoContent={todoContent} setTodoContent={setTodoContent} />
+      <CreateTodo
+        todoContent={todoContent}
+        setTodoContent={setTodoContent}
+        handleAddTodo={handleAddTodo}
+      />
 
       <View style={styles.mainApp}>
         <View style={styles.todos}>
-          <Todo />
-          <Todo />
+          {todos.map((todo, index) => (
+            <Todo key={index} id={todo?.id} text={todo?.text} />
+          ))}
         </View>
       </View>
 
