@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   btn: {
+    maxWidth: "80%",
     backgroundColor: "#e66767",
     paddingVertical: 5,
     paddingHorizontal: 10,

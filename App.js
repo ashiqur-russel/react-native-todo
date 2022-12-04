@@ -1,12 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import CreateTodo from "./components/CreateTodo";
 import Todo from "./components/Todo";
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text style={styles.heading}>Daily Todo</Text>
+
+      <CreateTodo />
       <View style={styles.mainApp}>
-        <Text style={styles.heading}>Daily Todo</Text>
         <View style={styles.todos}>
           <Todo />
           <Todo />
@@ -28,9 +31,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   heading: {
+    display: "flex",
+    flexDirection: "row",
+    marginTop: 50,
     fontSize: 20,
     fontWeight: "bold",
     marginBottom: 10,
+    justifyContent: "center",
+    alignItems: "center",
   },
   todos: {},
 });
